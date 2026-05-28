@@ -1,0 +1,46 @@
+body {
+    background: radial-gradient(circle,  rgb(227, 21, 141), rgba(225, 0, 255, 0.735)); 
+    height: 100px; 
+    overflow: hidden; 
+}
+h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white; 
+    font-weight: bold;
+}
+#container {
+    display: flex; 
+    margin-top: 4vh; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#displayImg{
+    display: flex; 
+    justify-content: space-around;
+    gap: 30px;
+    width: 276px;
+    margin: top 15px;
+    margin: bottom 11px; 
+    border: solid pink 1px; 
+    border-radius: 15px;
+}
+
+.message {
+    max-width: 560px;
+    text-wrap:wrap; 
+    color:white; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#shuffle {
+    display: block;
+    margin: 0 auto; 
+    color: rgb(190, 4, 178); 
+    background-color: yellow;
+    border: black; 
+    border-radius: 3.5px; 
+    padding: 6px 10px; 
+    font-size: 16px; 
+}
