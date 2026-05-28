@@ -7,12 +7,8 @@ to showcase that card, with its meaning and information from like an array
 5. then after the full spread is seen, and someone hits the "shuffle the deck" button, 
 the code will reset and start over */ 
 
-function card(nameOfCard, description, image){ 
-    this.name = name; 
-    this.description = description; 
-    this.image = image; 
+
     
-}
 // an array of all the cards in the RIDER-WAITE-SMITH tarot deck, along with their descriptions and the pictures associated with them
 const tarotDeck = [
     newCard("The Fool", "New Beginnings, Leaps of Faith, Innocence", "00theFool.jpeg"), 
@@ -131,7 +127,7 @@ document.getElementById("displayImg3").innerHTML = '<img src="imgs/78CardBack.jp
 
 }; 
 //displaying the first card 
-document.getElementById("displayingImg1").onclick = fucntion() {
+document.getElementById("displayingImg1").onclick = fucntion(); {
     let index = randomNumber; 
     let currentCard = tarotDeck[index]; 
 
@@ -139,7 +135,7 @@ document.getElementById("displayingImg1").onclick = fucntion() {
     document.getElementById("displayDescription1").innerHTML = '<p>' + currentCard.description + '</p>'; 
     document.getElementById('displayingImg1').style.pointerEvents = 'none'; 
 }
-document.getElementById("displayingImg2").onclick = fucntion() {
+document.getElementById("displayingImg2").onclick = fucntion(); {
     let index = randomNumber2; 
     let currentCard2 = tarotDeck[index]; 
 
