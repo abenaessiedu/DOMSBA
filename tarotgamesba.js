@@ -92,87 +92,13 @@ const tarotDeck = [
     {image: "76Wands13.jpeg", title: "Queen of Wands", description: "Courage, Determination, Joy"}, 
     {image: "77Wands14.jpeg", title: "King of Wands", description: "Big Picture, Leader, Overcoming Challenges"}, 
 
-]
-// document.addEventListener('DOMContentLoaded', ()=> {
-//     const shuffleBttn = document.getElementById('shuffle-button'); 
-//     const cards = document.querySelectorAll('.card-image img'); 
-//     const cardTitles = document.querySelectorAll('.card h3'); 
-//     const cardDescriptions = document.querySelectorAll('.card .card-description');
-// })
-const deckAlive = document.getElementById("tarotDeck");
+];
 
-tarotDeck.forEach((path) => {
-  const imgElement = document.createElement("img");
-  imgElement.src = path;
-  imgElement.alt = "Image from array";
-  imgElement.style.margin = "10px";
-  imgElement.style.maxWidth = "200px";
-  container.appendChild(imgElement);
-});
+const shuffleButton = document.getElementById('shuffle-button'); 
+const reShuffleButton = document.getElementById("SHUFFLE"); 
+const cards = document.querySelectorAll('.cards-image img');
+const cardTitles = document.querySelectorAll('.card h3'); 
+const cardDescriptions = document.querySelectorAll('.description'); 
 
-//three functions to generate the 3 card pull at random 
-function getRandom(num) {
-    let randomNumber = 
-    Math.floor(Math.random() * num); 
-    return randomNumber; 
-}
 
-function getRandom2(num) {
-    let randomNumber2 = 
-    Math.floor(Math.random() * num); 
-    do {
-        Math.floor(Math.random()* num); 
-    } while (randomNumber === randomNumber2);
-    return randomNumber2
-}
 
-function getRandom3(num){
-    let randomNumber3 = 
-    Math.floor(Math.random() * num); 
-    do {
-        Math.floor(Math.random() * num); 
-    } while (randomNumber2 === randomNumber3); 
-    return randomNumber3
-}
-let randomNumber = getRandom(78); 
-let randomNumber2 = getRandom2(78); 
-let randomNumber3 = getRandom3(78); 
-//showing the back of the cards first 
-document.getElementById("displayingImg").onload 
-{
-document.getElementById("displayImg1").innerHTML = '<img src="imgs/78CardBack.jpg">'; 
-document.getElementById("displayImg2").innerHTML = '<img src="imgs/78CardBack.jpg">'; 
-document.getElementById("displayImg3").innerHTML = '<img src="imgs/78CardBack.jpg">'; 
-
-}; 
-//displaying the first card 
-document.getElementById("displayingImg1").onclick = function(){
-    let index = randomNumber; 
-    let currentCard = tarotDeck[index]; 
-
-    document.getElementById("displayingImg1").innerHTML = '<img src="imgs/cards' + currentCard.image + '.jpeg">'; 
-    document.getElementById("displayDescription1").innerHTML = '<p>' + currentCard.description + '</p>'; 
-    document.getElementById('displayingImg1').style.pointerEvents = 'none'; 
-}
-document.getElementById("displayingImg2").onclick = function(){ 
-    let index = randomNumber2; 
-    let currentCard2 = tarotDeck[index]; 
-
-    document.getElementById("displayingImg2").innerHTML = '<img src="imgs/cards' + currentCard.image + '.jpeg">'; 
-    document.getElementById("displayDescription2").innerHTML = '<p>' + currentCard.description + '</p>'; 
-    document.getElementById('displayingImg2').style.pointerEvents = 'none'; 
-}
-document.getElementById("displayingImg3").onclick = function(){
-    let index = randomNumber3; 
-    let currentCard3 = tarotDeck[index]; 
-
-    document.getElementById("displayingImg3").innerHTML = '<img src="imgs/cards' + currentCard.image + '.jpeg">'; 
-    document.getElementById("displayDescription3").innerHTML = '<p>' + currentCard.description + '</p>'; 
-    document.getElementById('displayingImg3').style.pointerEvents = 'none'; 
-}
-
-const reShuffleButton = document.querySelector("#SHUFFLE"); 
-
-reShuffleButton.addEventListener('click', function() {
-    window.location.reload(); 
-}); 
