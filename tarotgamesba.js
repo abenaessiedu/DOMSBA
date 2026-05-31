@@ -94,22 +94,31 @@ const tarotDeck = [
 
 ];
 //the DOM elements for tarot logic 
-const shuffleButton = document.getElementById('shuffle-button');
-const reShuffleButton = document.getElementById("SHUFFLE");
-const cards = document.querySelectorAll('.cards-image img');
-const cardTitles = document.querySelectorAll('.card h3');
-const cardDescriptions = document.querySelectorAll('.description');
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const fileInput = document.getElementById('file-upload'); 
+    const 
+
+}
+)
+// const shuffleButton = document.getElementById('shuffle-button');
+// const reShuffleButton = document.getElementById("SHUFFLE");
+// const cards = document.querySelectorAll('.cards-image img');
+// const cardTitles = document.querySelectorAll('.card h3');
+// const cardDescriptions = document.querySelectorAll('.description');
 // functions to generate the random readings 
 //CARD 1--THE PAST 
 function getRandom(num) {
     return Math.floor(Math.random() * num);
 }
 //CARD 2--THE PRESENT 
-function getRandom2(num, exclude) {
+function getRandom2(num, exclude1) {
     let randomNumber2;
     do {
         randomNumber2 = Math.floor(Math.random() * num);
-    } while (randomNumber2 === exclude);
+    } while (randomNumber2 === exclude1);
     return randomNumber2;
 }
 //CARD 3--THE FUTURE 
@@ -138,21 +147,21 @@ function displayCard(index, cardElementId, descriptionElementId) {
     document.getElementById(cardElementId).style.pointerEvents = 'none';
 }
 //creating event listeners for clicking onto the cards 
-document.getElementById("displayingImg1").addEventListener('click', function (); {
-    displayCard(randomNumber, "displayingImg1", "displayDescription1");
+document.getElementById(displayDescription1).addEventListener('click', function (); {
+    displayCard(randomNumber, "displayDescription1");
 });
 
-document.getElementById("displayingImg2").addEventListener('click', function () {
-    displayCard(randomNumber2, "displayingImg2", "displayDescription2");
+document.getElementById(displayDescription2).addEventListener('click', function () {
+    displayCard(randomNumber2, "displayDescription2");
 });
-document.getElementById("displayingImg3").addEventListener('click', function () {
-    displayCard(randomNumber3, "displayingImg3", "displayDescription3");
+document.getElementById(displayDescription3).addEventListener('click', function () {
+    displayCard(randomNumber3, "displayDescription3");
 });
 //shuffle button to make the cards random again 
-shuffleButton.addEventListener('click', function () {
-    randomNumber = getRandom(tarotDeck.length);
-    randomNumber2 = getRandom2(tarotDeck.length, randomNumber);
-    randomNumber3 = getRandom3(tarotDeck.length, randomNumber, randomNumber2);
+shuffleButton.addEventListener('click', () => {
+    // randomNumber = getRandom(tarotDeck.length);
+    // randomNumber2 = getRandom2(tarotDeck.length, randomNumber);
+    // randomNumber3 = getRandom3(tarotDeck.length, randomNumber, randomNumber2);
 
     cards.forEach(card => {
         card.src = "imgs/78CardBack.jpeg";
@@ -160,9 +169,15 @@ shuffleButton.addEventListener('click', function () {
     cardDescriptions.forEach(description => {
         description.textContent = "";
     });
-
+document.getElementById('displayingImg1').style.pointerEvents = 'auto'; 
+document.getElementById('displaingImg2').style.pointerEvents = 'auto'; 
+document.getElementById('displayingImg3').style.pointerEvents = 'auto'; 
 
 });
+//the reshuffle button to refresh the readings 
+reShuffleButton.addEventListener('click', function(){
+    window.location.reload(); 
+}); 
 
 
 

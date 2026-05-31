@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 🔮 TAROT READER 🔮 </title>
     <link rel="stylesheet" href="tarotgamesba.css">
+    <script src="tarotgamesba.js" defer> </script>
+
 
 </head>
 
@@ -19,10 +21,10 @@
     <div class="container">
         <div class="card" id="past-card">
             <h3> 🕰️ PAST 🕰️ </h3>
-            <div class="card-image">
+            <div class="card-image" id="displayingImg1">
                 <img src="imgs/78CardBack.jpg" alt="Card Back" style="width:200px;">
             </div>
-             <p class="card-description"> </p>
+            <p class="description" id="displayDescription1"> </p>
         </div>
 
         <div class="card" id="present-card">
@@ -42,45 +44,15 @@
             <p class="card-description"> </p>
         </div>
     </div>
+    <input type="file" id="file-upload" accept="image/*">
+
+    <button id="shuffle-button">Shuffle Cards</button>
+    <button id="SHUFFLE">Re-Shuffle</button>
 
 
-
-
-
-    <!-- <div id="display">
-            <div id="displayImg">
-                <div id="displayImg1"> </div>
-                <div id="displayImg2"> </div>
-
-
-
-
-                //
-            </div>
-            <div class="description" id="displayDescription1" class="description">
-
-            </div>
-            <div class="description" id="displayDescription2" class="description">
-
-            </div>
-            <div class="description" id="displayDescription3" class="description">
-
-            </div>
-            <div id="tarotDeck"></div>
-            <button id="shuffle"> SHUFFLE </button> -->
-
-
-    <!--eventually, I would love to build off of this site and 
-            create like a section where like i explain all of the cards AND 
-            the history of the RIDER-WAITE-SMITH, esp SMITH portion of the deck -->
     </div>
 
     </div>
-
-
-
-
-    <script src="tarotgamesba.js"> </script>
 
 </body>
 
